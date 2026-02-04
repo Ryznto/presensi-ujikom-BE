@@ -6,20 +6,24 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('admin_profiles', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+
+            $table->foreignId('user_id')
+                  ->constrained('users')
+                  ->onDelete('cascade');
+
+            $table->string('nama_admin');
+            $table->string('email')->nullable();
+            $table->string('no_hp')->nullable();
+            $table->string('foto')->nullable();
+
+            $table->timestamp('created_at')->useCurrent();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('admin_profiles');

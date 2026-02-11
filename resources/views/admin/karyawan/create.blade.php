@@ -18,10 +18,8 @@
                 <label class="block text-sm text-slate-400 mb-1">
                     NIP
                 </label>
-                <input type="text"
-                       value="Auto Generate oleh Sistem"
-                       disabled
-                       class="w-full px-4 py-2.5 rounded-lg bg-slate-800 border border-slate-700
+                <input type="text" value="Auto Generate oleh Sistem" disabled
+                    class="w-full px-4 py-2.5 rounded-lg bg-slate-800 border border-slate-700
                               text-slate-400 cursor-not-allowed">
             </div>
 
@@ -100,20 +98,21 @@
             </div>
 
             {{-- ACTION --}}
-            <div class="flex gap-3 pt-4">
+            <div class="flex gap-3 pt-6">
+                {{-- Button Batal --}}
                 <a href="/admin/karyawan"
-                   class="px-4 py-2 rounded-lg bg-slate-700 hover:bg-slate-600
-                          transition text-sm font-medium">
+                    class="inline-block w-32 text-center px-6 py-2.5 rounded-lg bg-slate-200 hover:bg-slate-300 
+              text-slate-700 transition-all duration-200 text-sm font-semibold border border-slate-300">
                     Batal
                 </a>
 
+                {{-- Button Simpan --}}
                 <button type="submit"
-                        class="px-6 py-2 rounded-lg bg-blue-600 hover:bg-blue-700
-                               transition text-sm font-semibold">
+                    class="w-32 px-6 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-700 
+                   text-white shadow-lg shadow-blue-900/20 transition-all duration-200 text-sm font-semibold">
                     Simpan
                 </button>
             </div>
-
         </form>
     </div>
 @endsection

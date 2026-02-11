@@ -4,28 +4,46 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\KaryawanController;
 use App\Http\Controllers\Admin\PresensiController;
-use Illuminate\Http\Request;
-
-// root: Langsung ke dashboard
 
 Route::get('/', function () {
     return view('auth.login');
 });
-Route::get('/admin/karyawan/edit', function () {
-    return view('admin.karyawan.edit');
-});
-
-
-
 
 Route::prefix('admin')->group(function () {
 
-    // 1. Dashboard
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+    // Dashboard
+    Route::get('/dashboard', [DashboardController::class, 'index'])
+        ->name('admin.dashboard');
 
-    // 2. CRUD Karyawan
-    Route::resource('/karyawan', KaryawanController::class);
+    // Karyawan (UI Only)
+    Route::get('/karyawan', function () {
+        return view('admin.karyawan.index');
+    })->name('karyawan.index');
 
-    // 3. Presensi
-    Route::resource('/presensi', PresensiController::class)->only(['index', 'show']);
+    Route::get('/karyawan/create', function () {
+        return view('admin.karyawan.create');
+    })->name('karyawan.create');
+
+    Route::get('/karyawan/edit', function () {
+        return view('admin.karyawan.edit');
+    })->name('karyawan.edit');
+
+    // Divisi (UI Only)
+    Route::get('/divisi', function () {
+        return view('admin.divisi.index');
+    })->name('divisi.index');
+
+    Route::get('/divisi/create', function () {
+        return view('admin.divisi.create');
+    })->name('divisi.create');
+
+    Route::get('/divisi/edit', function () {
+        return view('admin.divisi.edit');
+    })->name('divisi.edit');
+
+    // Presensi (UI Only)
+    Route::get('/presensi', function () {
+        return view('admin.presensi.index');
+    })->name('presensi.index');
+
 });

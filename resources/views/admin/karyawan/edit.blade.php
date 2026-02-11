@@ -18,10 +18,8 @@
                 <label class="block text-sm text-slate-400 mb-1">
                     NIP
                 </label>
-                <input type="text"
-                       value="EMP-2024001"
-                       disabled
-                       class="w-full px-4 py-2.5 rounded-lg bg-slate-800 border border-slate-700
+                <input type="text" value="EMP-2024001" disabled
+                    class="w-full px-4 py-2.5 rounded-lg bg-slate-800 border border-slate-700
                               text-slate-400 cursor-not-allowed">
             </div>
 
@@ -30,9 +28,8 @@
                 <label class="block text-sm text-slate-400 mb-1">
                     Nama Lengkap
                 </label>
-                <input type="text"
-                       value="Budi Santoso"
-                       class="w-full px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-700
+                <input type="text" value="Budi Santoso"
+                    class="w-full px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-700
                               focus:ring-2 focus:ring-blue-500 focus:outline-none
                               text-slate-100">
             </div>
@@ -97,17 +94,19 @@
             </div>
 
             {{-- ACTION --}}
-            <div class="flex gap-3 pt-4">
+            <div class="flex gap-3 pt-6">
+                {{-- Button Batal --}}
                 <a href="/admin/karyawan"
-                   class="px-4 py-2 rounded-lg bg-slate-700 hover:bg-slate-600
-                          transition text-sm font-medium">
+                    class="flex-1 md:flex-none text-center px-6 py-2.5 rounded-lg bg-slate-200 hover:bg-slate-300 
+              text-slate-700 transition-all duration-200 text-sm font-semibold border border-slate-300">
                     Batal
                 </a>
 
+                {{-- Button Update --}}
                 <button type="submit"
-                        class="px-6 py-2 rounded-lg bg-blue-600 hover:bg-blue-700
-                               transition text-sm font-semibold">
-                    Update
+                    class="flex-1 md:flex-none px-6 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-700 
+                   text-white shadow-lg shadow-blue-900/20 transition-all duration-200 text-sm font-semibold">
+                    Update Data
                 </button>
             </div>
 

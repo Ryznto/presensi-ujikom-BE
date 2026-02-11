@@ -1,25 +1,35 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
-<div class="container mx-auto p-4 max-w-lg">
-    <h1 class="text-2xl font-bold text-slate-100 mb-4">Tambah Divisi</h1>
+    <div class="mb-8">
+        <h1 class="text-2xl font-bold text-slate-800">Tambah Divisi</h1>
+        <p class="text-slate-500 text-sm">Input unit kerja baru ke dalam sistem</p>
+    </div>
 
-    <form action="{{ route('divisi.store') }}" method="POST" class="bg-slate-800 p-6 rounded-lg shadow-md">
-        @csrf
-        <div class="mb-4">
-            <label for="nama_divisi" class="block text-slate-200 mb-2">Nama Divisi</label>
-            <input type="text" name="nama_divisi" id="nama_divisi" class="w-full px-4 py-2 rounded bg-slate-700 text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-        </div>
+    <div class="max-w-2xl bg-white border border-slate-200 rounded-2xl shadow-sm p-8">
+        <form action="#" method="POST">
+            @csrf
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Nama Divisi</label>
+                    <input type="text" name="nama_divisi" placeholder="Contoh: Human Resource Development"
+                           class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 transition outline-none text-sm">
+                </div>
+            </div>
 
-        <div class="mb-4">
-            <label for="deskripsi" class="block text-slate-200 mb-2">Deskripsi</label>
-            <textarea name="deskripsi" id="deskripsi" class="w-full px-4 py-2 rounded bg-slate-700 text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500" rows="4"></textarea>
-        </div>
+            <div class="flex gap-3 pt-8">
+                <a href="/admin/divisi"
+                   class="inline-block w-32 text-center px-6 py-2.5 rounded-lg bg-slate-200 hover:bg-slate-300 
+                          text-slate-700 transition-all duration-200 text-sm font-semibold border border-slate-300">
+                    Batal
+                </a>
 
-        <div class="flex justify-end space-x-2">
-            <a href="{{ route('divisi.index') }}" class="px-4 py-2 bg-gray-500 hover:bg-gray-600 text-white rounded">Batal</a>
-            <button type="submit" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded">Simpan</button>
-        </div>
-    </form>
-</div>
+                <button type="submit"
+                        class="w-32 px-6 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-700 
+                               text-white shadow-lg shadow-blue-900/20 transition-all duration-200 text-sm font-semibold border border-blue-600">
+                    Simpan
+                </button>
+            </div>
+        </form>
+    </div>
 @endsection
